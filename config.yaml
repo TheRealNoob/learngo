@@ -1,0 +1,5 @@
+HttpServer:
+  host: "0.0.0.0"
+  PoRt: 8001
+Logging:
+  Level: info
