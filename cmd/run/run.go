@@ -5,16 +5,16 @@ import (
 	"github.com/therealnoob/learngo/cmd/run/scraper"
 )
 
-var (
-	Command = &cobra.Command{
+func Cmd() *cobra.Command {
+	command := cobra.Command{
 		Use:   "run",
 		Short: "Run BotDetector component",
 		Long:  "Run BotDetector component",
 	}
-)
 
-func init() {
-	Command.AddCommand(
-		scraper.Command,
+	command.AddCommand(
+		scraper.Cmd(),
 	)
+
+	return &command
 }

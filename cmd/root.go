@@ -9,21 +9,21 @@ import (
 	"github.com/therealnoob/learngo/cmd/version"
 )
 
-var (
-	Command = &cobra.Command{
+func Cmd() *cobra.Command {
+	command := cobra.Command{
 		Use:   "learngo",
 		Short: "Run BotDetector scraper",
 		Long:  "Scrapes OldSchool Runescape HiScores & RuneMetrics",
 	}
-)
 
-func init() {
-	Command.AddCommand(
-		run.Command,
-		version.Command,
+	command.AddCommand(
+		run.Cmd(),
+		version.Cmd(),
 	)
 
 	viper.SetEnvPrefix("LEARNGO")
 	// replaces in pairs - both . and - become _
 	viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_", "-", "_"))
+
+	return &command
 }

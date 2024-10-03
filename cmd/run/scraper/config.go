@@ -17,8 +17,9 @@ type httpServer struct {
 	host string
 	port uint16
 	TLS  struct {
-		cert       string
-		key        string
+		enabled    bool
+		certFile   string
+		keyFile    string
 		minVersion float64
 		maxVersion float64
 	}

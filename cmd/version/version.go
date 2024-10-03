@@ -8,8 +8,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var (
-	Command = &cobra.Command{
+func Cmd() *cobra.Command {
+	command := cobra.Command{
 		Use:   "version",
 		Short: "Print the version and exit",
 		Long:  "Print the version and exit",
@@ -23,7 +23,9 @@ var (
 			)
 		},
 	}
-)
+
+	return &command
+}
 
 func Version() string {
 	if env_version := os.Getenv("API_VERSION"); len(env_version) != 0 {

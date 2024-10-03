@@ -1,5 +1,7 @@
 HttpServer:
   host: "0.0.0.0"
   PoRt: 8001
+  TLS:
+    enabled: false
 Logging:
   Level: info

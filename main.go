@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	if err := root.Command.Execute(); err != nil {
+	if err := root.Cmd().Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
